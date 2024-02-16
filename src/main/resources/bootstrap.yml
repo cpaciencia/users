@@ -7,9 +7,9 @@ spring:
     # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
     active: #spring.profiles.active#
   datasource:
-    url: jdbc:mysql://${TEA_DB_URL:localhost}/${TEA_DATABASE_NAME:tea}?useUnicode=true&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
-    username: ${TEA_DB_USER:root}
-    password: ${TEA_DB_PASSWORD:root}
+    url: jdbc:mysql://${DB_URL:localhost}/${DB_NAME:tea}?useUnicode=true&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -24,6 +24,6 @@ springdoc:
     enabled: ${ENABLE_API_DOCS:true}
     swagger-ui:
       enabled: ${ENABLE_SWAGGER_UI:true}
-    path: /api/v1.0.0/application/v3/api-docs
+    path: /api/v1.0.0/user/v3/api-docs
 server:
-  port: 9999
+  port: 8081
